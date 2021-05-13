@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir \
 # Seed the initial config.yaml
 COPY ./config.yaml /data/config.yaml
 
-RUN --mount=type=secret,id=password octoprint --basedir /octoprint/octoprint user add \
+RUN octoprint --basedir /octoprint/octoprint user add \
   --admin --password "abc123" "josh"
   
 #CMD ["octoprint","serve","--iknowwhatimdoing","--host","0.0.0.0"]
