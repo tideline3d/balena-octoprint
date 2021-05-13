@@ -1,6 +1,6 @@
 version: '2'
 volumes:
-  octoprint-data: {}
+  octoprint: {}
 services:
   octoprint:
     build: ./octoprint
