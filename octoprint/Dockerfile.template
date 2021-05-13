@@ -3,7 +3,7 @@ FROM --platform=linux/arm64 octoprint/octoprint:minimal
 ENV PYTHONUSERBASE /octoprint/plugins
 ENV PIP_USER true
 ENV PATH "${PYTHONUSERBASE}/bin:${PATH}"
-RUN PYTHONUSERBASE=/usr/local/ pip install --no-cache-dir \
+RUN pip install --no-cache-dir \
     "https://github.com/marian42/octoprint-preheat/archive/master.zip" 
 
 # Seed the initial config.yaml
