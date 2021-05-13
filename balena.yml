@@ -11,7 +11,6 @@ assets:
     data:
       url: "https://raw.githubusercontent.com/balenalabs-incubator/balena-octoprint/master/logo.png"
 data:
-  defaultDeviceType: "raspberrypi3"
+  defaultDeviceType: "raspberrypi4"
   supportedDeviceTypes:
-    - "raspberrypi3"
-    - "fincm3"
+    - "raspberrypi4"
