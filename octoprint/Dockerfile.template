@@ -1,4 +1,4 @@
-FROM --platform=linux/arm/v7 nunofgs/octoprint:master-alpine
+FROM --platform=linux/arm64 octoprint/octoprint:minimal
 
 RUN PYTHONUSERBASE=/usr/local/ pip install --no-cache-dir \
     "https://github.com/marian42/octoprint-preheat/archive/master.zip" \
