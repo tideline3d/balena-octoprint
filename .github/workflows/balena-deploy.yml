@@ -14,4 +14,4 @@ jobs:
       uses: balena-io-playground/balena-cloud-github-action@v0.1
       with:
         balena_token: ${{ secrets.BALENA_TOKEN }}
-        balena_app_name: 'octoprint-docker'
+        balena_app_name: 'balena-octoprint'
