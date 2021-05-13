@@ -6,7 +6,28 @@ services:
     build: ./octoprint
     restart: always
     volumes:
-      - 'octoprint-data:/data'
+      - octoprint:/octoprint
     privileged: true
     ports:
       - '80:5000'
+  config-editor:
+    image: linuxserver/code-server
+    ports:
+      - 8443:8443
+    depends_on:
+      - octoprint
+    restart: unless-stopped
+    environment:
+      - PUID=0
+      - GUID=0
+      - TZ=America/NewYork
+    volumes:
+      - octoprint:/octoprint
+  node_exporter:
+    image: quay.io/prometheus/node-exporter:latest
+    container_name: node_exporter
+    restart: always
+    environment:
+      - 'SCRAPE_PORT=9100'
+    ports:
+      - 9100:9100
