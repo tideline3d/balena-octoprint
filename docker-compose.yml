@@ -3,7 +3,7 @@ volumes:
   octoprint: {}
 services:
   octoprint:
-    build: ./octoprint
+    build: ./
     restart: always
     volumes:
       - octoprint:/octoprint
