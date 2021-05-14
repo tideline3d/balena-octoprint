@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 octoprint/octoprint:latest
+FROM --platform=linux/arm64 octoprint/octoprint:minimal
 
 ENV PYTHONUSERBASE /octoprint/plugins
 ENV PIP_USER true
