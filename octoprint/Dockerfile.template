@@ -10,8 +10,8 @@ RUN pip install --no-cache-dir \
     "https://github.com/gdombiak/OctoPrint-OctoPod/archive/refs/tags/0.3.0.zip"
 
 # Seed the initial config.yaml
-COPY ./config.yaml /data/config.yaml
-COPY ./config.yaml /data/users.yaml
+COPY ./config.yaml /octoprint/octoprint/config.yaml
+COPY ./users.yaml /octoprint/octoprint/users.yaml
 
 #RUN octoprint --basedir /octoprint/octoprint user add \
 #  --admin --password "abc123" "josh"
