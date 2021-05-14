@@ -4,16 +4,15 @@ ENV PYTHONUSERBASE /octoprint/plugins
 ENV PIP_USER true
 ENV PATH "${PYTHONUSERBASE}/bin:${PATH}"
 RUN pip install --no-cache-dir numpy
-RUN pip install --no-cache-dir \
-    "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/refs/tags/1.0.1.zip" \
-    "https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/refs/tags/1.10.10.zip" \
-    "https://github.com/gdombiak/OctoPrint-OctoPod/archive/refs/tags/0.3.0.zip"
+#RUN pip install --no-cache-dir \
+#    "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/refs/tags/1.0.1.zip" \
+#    "https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/refs/tags/1.10.10.zip" \
+#    "https://github.com/gdombiak/OctoPrint-OctoPod/archive/refs/tags/0.3.0.zip"
 
 # Seed the initial config.yaml
 COPY ./config.yaml /octoprint/octoprint/config.yaml
 COPY ./users.yaml /octoprint/octoprint/users.yaml
 
-#RUN octoprint --basedir /octoprint/octoprint user add \
-#  --admin --password "abc123" "josh"
+RUN octoprint --basedir /octoprint/octoprint
   
-CMD ["octoprint","serve","--iknowwhatimdoing","--host","0.0.0.0"]
+#CMD ["octoprint","serve","--iknowwhatimdoing","--host","0.0.0.0"]
