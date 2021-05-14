@@ -11,8 +11,9 @@ RUN pip install --no-cache-dir \
 
 # Seed the initial config.yaml
 COPY ./config.yaml /data/config.yaml
+COPY ./config.yaml /data/users.yaml
 
-RUN octoprint --basedir /octoprint/octoprint user add \
-  --admin --password "abc123" "josh"
+#RUN octoprint --basedir /octoprint/octoprint user add \
+#  --admin --password "abc123" "josh"
   
-#CMD ["octoprint","serve","--iknowwhatimdoing","--host","0.0.0.0"]
+CMD ["octoprint","serve","--iknowwhatimdoing","--host","0.0.0.0"]

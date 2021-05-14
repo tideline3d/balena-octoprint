@@ -1,0 +1,12 @@
+josh:
+  active: true
+  apikey: null
+  groups:
+  - users
+  - admins
+  password: 83f56617200f874f7d427e65ce0ff42878e2b7d140fa8778cf7c02e88131263b0790645743d79075a44905f3fd5febc9eface30f7002f745a2252d9cf7985966
+  permissions: []
+  roles:
+  - user
+  - admin
+  settings: {}
