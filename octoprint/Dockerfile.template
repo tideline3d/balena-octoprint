@@ -13,6 +13,6 @@ RUN pip install --no-cache-dir numpy
 COPY ./config.yaml /octoprint/octoprint/config.yaml
 COPY ./users.yaml /octoprint/octoprint/users.yaml
 
-#RUN octoprint --basedir /octoprint/octoprint
+RUN octoprint --basedir /octoprint/octoprint
   
 #CMD ["octoprint","serve","--iknowwhatimdoing","--host","0.0.0.0"]
