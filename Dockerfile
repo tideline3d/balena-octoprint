@@ -79,6 +79,9 @@ ENV PATH "${PYTHONUSERBASE}/bin:${PATH}"
 # set WORKDIR 
 WORKDIR /octoprint
 
+RUN PYTHONUSERBASE=/usr/local/ pip install --no-cache-dir \
+    "https://github.com/tg44/OctoPrint-Prometheus-Exporter/archive/refs/tags/0.1.7.zip" 
+
 # port to access haproxy frontend
 EXPOSE 80
 
