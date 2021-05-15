@@ -2,6 +2,7 @@ accessControl:
   salt: HeiITgEYC1Zz9eAvghWAZEJTl1UQgFAw
   userfile: /octoprint/octoprint/users.yaml
 api:
+  allowCrossOrigin: true
   key: 62BFEB0AC6C44DABB2AA7A6E1148474A
 plugins:
   announcements:
@@ -17,6 +18,9 @@ plugins:
         read_until: 1620795600
       _releases:
         read_until: 1620652800
+    enabled_channels:
+      - _important
+      - _releases
   discovery:
     upnpUuid: cb75080a-2627-4375-8d1d-e98f8b46b694
   errortracking:
