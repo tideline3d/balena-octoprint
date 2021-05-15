@@ -84,7 +84,10 @@ RUN PYTHONUSERBASE=/usr/local/ pip install --no-cache-dir \
     "https://github.com/gdombiak/OctoPod/archive/refs/tags/3.11.zip" \
     "https://github.com/OllisGit/OctoPrint-PrintJobHistory/releases/download/1.12.dev1/master.zip" \
     "https://github.com/markwal/OctoPrint-SnapStream/archive/refs/tags/0.3.zip" \
-    "https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/refs/tags/1.10.10.zip"
+    "https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/refs/tags/1.10.10.zip" \
+    "https://github.com/Birkbjo/OctoPrint-Themeify/archive/refs/tags/v1.2.2.zip" \
+    "https://github.com/eyal0/OctoPrint-PrintTimeGenius/archive/refs/tags/2.2.8.zip" \
+    "https://github.com/jneilliii/OctoPrint-TPLinkSmartplug/archive/refs/tags/1.0.1.zip"
 
 # port to access haproxy frontend
 EXPOSE 80
