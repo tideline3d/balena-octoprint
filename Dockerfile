@@ -21,7 +21,7 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
 FROM python:${PYTHON_BASE_IMAGE} AS build
 
 ARG octoprint_ref
-ENV octoprint_ref "1.6.0"
+ENV octoprint_ref "1.6.1"
 
 RUN apt-get update && apt-get install -y \
   avrdude \
@@ -80,7 +80,10 @@ ENV PATH "${PYTHONUSERBASE}/bin:${PATH}"
 WORKDIR /octoprint
 
 RUN PYTHONUSERBASE=/usr/local/ pip install --no-cache-dir \
-    "https://github.com/tg44/OctoPrint-Prometheus-Exporter/archive/refs/tags/0.1.7.zip" 
+    "https://github.com/tg44/OctoPrint-Prometheus-Exporter/archive/refs/tags/0.1.7.zip" \
+    "https://github.com/gdombiak/OctoPod/archive/refs/tags/3.11.zip" \
+    "https://github.com/OllisGit/OctoPrint-PrintJobHistory/releases/download/1.12.dev1/master.zip" \
+    "https://github.com/markwal/OctoPrint-SnapStream/archive/refs/tags/0.3.zip"
 
 # port to access haproxy frontend
 EXPOSE 80
