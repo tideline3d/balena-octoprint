@@ -5,6 +5,14 @@ api:
   allowCrossOrigin: true
   key: 62BFEB0AC6C44DABB2AA7A6E1148474A
 plugins:
+  PrintJobHistory:
+    capturePrintJobHistoryMode: always
+    pluginCheckActivated: false
+    selectedFilamentTrackerPlugin: no plugin installed/enabled
+    showPrintJobDialogAfterPrint: false
+    takePluginThumbnailAfterPrint: false
+  snapstream:
+    fallbackonly: false
   announcements:
     _config_version: 1
     channels:
