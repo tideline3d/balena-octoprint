@@ -79,7 +79,7 @@ ENV PATH "${PYTHONUSERBASE}/bin:${PATH}"
 # set WORKDIR 
 WORKDIR /octoprint
 
-RUN PYTHONUSERBASE=/usr/local/ pip install --no-cache-dir \
+RUN pip install --no-cache-dir \
     "https://github.com/tg44/OctoPrint-Prometheus-Exporter/archive/refs/tags/0.1.7.zip" \
     "https://github.com/gdombiak/OctoPod/archive/refs/tags/3.11.zip" \
     "https://github.com/OllisGit/OctoPrint-PrintJobHistory/releases/download/1.12.dev1/master.zip" \
