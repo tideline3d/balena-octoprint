@@ -1,12 +1,12 @@
 version: '2'
-volumes:
-  octoprint: {}
+#volumes:
+#  octoprint: {}
 services:
   octoprint:
     build: ./
     restart: always
-    volumes:
-      - octoprint:/octoprint
+    #volumes:
+    #  - octoprint:/octoprint
     privileged: true
     ports:
       - '80:5000'
@@ -21,8 +21,8 @@ services:
       - PUID=0
       - GUID=0
       - TZ=America/NewYork
-    volumes:
-      - octoprint:/octoprint
+    #volumes:
+    #  - octoprint:/octoprint
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
     container_name: node_exporter
