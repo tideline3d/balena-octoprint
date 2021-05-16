@@ -50,4 +50,4 @@ services:
       - ./promtail:/etc/promtail-config/
     command: -config.file=/etc/promtail-config/promtail.yml
     labels:
-      io.{{ $names.company.short }}.features.journal-logs
+      io.{{ $names.company.short }}.features.journal-logs: '1'
