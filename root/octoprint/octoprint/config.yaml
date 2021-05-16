@@ -5,6 +5,18 @@ api:
   allowCrossOrigin: true
   key: 62BFEB0AC6C44DABB2AA7A6E1148474A
 plugins:
+  firmwareupdater:
+    avrdude_avrmcu: m2560
+    avrdude_baudrate: ''
+    avrdude_path: /usr/bin/avrdude
+    avrdude_programmer: wiring
+    dfuprog_avrmcu: ''
+    flash_method: avrdude
+  bedlevelvisualizer:
+      _config_version: 1
+      command: "G80\t\t\t; run mesh bed leveling routine.\n@BEDLEVELVISUALIZER\t\
+          ; instruct plugin to start recording responses from printer.\nG81\t\t\t\
+          ; report mesh bed leveling status."
   PrintJobHistory:
     capturePrintJobHistoryMode: always
     pluginCheckActivated: false
