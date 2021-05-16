@@ -6,4 +6,21 @@ positions:
   filename: /tmp/positions.yaml
 
 clients:
-  - url: 192.168.42.242:3200/loki/api/v1/push
+  - url:  http://192.168.42.242:3100/loki/api/v1/push
+
+scrape_configs:
+ - job_name: octoprint
+   pipeline_stages:
+   static_configs:
+   - targets:
+      - localhost
+     labels:
+      job: octoprint  # A `job` label is fairly standard in prometheus and useful for linking metrics and logs.
+      __path__: /home/pi/.octoprint/logs/*.log  # The path matching uses a third party library: https://github.com/bmatcuk/doublestar
+ - job_name: system
+   static_configs:
+   - targets:
+       - localhost
+     labels:
+      job: varlogs
+      __path__: /var/log/*log
