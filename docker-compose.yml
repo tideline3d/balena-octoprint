@@ -38,7 +38,7 @@ services:
     labels:
       io.balena.features.dbus: '1'
   restreamer:
-    image: datarhei/restreamer:latest	
+    image: datarhei/restreamer-aarch64:latest
     container_name: restreamer
     restart: always
     ports:
