@@ -48,6 +48,6 @@ services:
     container_name: promtail
     #volumes:
     #  - ./promtail:/etc/promtail-config/
-    command: -config.file=/etc/promtail-config/promtail.yml
+    command: -config.file=/etc/promtail/promtail.yml
     labels:
       io.balena.features.journal-logs: '1'
