@@ -46,6 +46,6 @@ services:
   promtail:
     build: ./promtail
     container_name: promtail
-    command: -config.file=/etc/promtail/promtail.yml
+    command: -config.file=/etc/promtail/promtail.yml -log.level=debug
     labels:
       io.balena.features.journal-logs: '1'
