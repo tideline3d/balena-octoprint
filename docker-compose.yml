@@ -1,12 +1,12 @@
 version: '2'
-#volumes:
-#  octoprint: {}
+volumes:
+  octoprint-logs: {}
 services:
   octoprint:
     build: ./
     restart: always
-    #volumes:
-    #  - octoprint:/octoprint
+    volumes:
+      - octoprint-logs:/octoprint/octoprint/logs
     privileged: true
     ports:
       - '80:5000'
@@ -46,6 +46,10 @@ services:
   promtail:
     build: ./promtail
     container_name: promtail
+    depends_on:
+      - octoprint
+    volumes:
+      - octoprint-logs:/octoprint-logs
     command: -config.file=/etc/promtail/promtail.yml -log.level=debug
     labels:
       io.balena.features.journal-logs: '1'
