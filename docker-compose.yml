@@ -44,10 +44,8 @@ services:
     ports:
       - 8080:8080
   promtail:
-    image: grafana/promtail:latest
+    build: ./promtail
     container_name: promtail
-    #volumes:
-    #  - ./promtail:/etc/promtail-config/
     command: -config.file=/etc/promtail/promtail.yml
     labels:
       io.balena.features.journal-logs: '1'
