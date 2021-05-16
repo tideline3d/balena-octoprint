@@ -31,6 +31,18 @@ services:
       - 'SCRAPE_PORT=9100'
     ports:
       - 9100:9100
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--path.rootfs=/rootfs'
+      - '--collector.filesystem.ignored-mount-points="^(/rootfs|/host|)/(sys|proc|dev|host|etc)($$|/)"'
+      - '--collector.filesystem.ignored-fs-types="^(sys|proc|auto|cgroup|devpts|ns|au|fuse\.lxc|mqueue)(fs|)$$"'
   mdns-publisher:
     build: ./mdns-publisher
     environment:
@@ -43,3 +55,11 @@ services:
     restart: always
     ports:
       - 8080:8080
+  promtail:
+    image: grafana/promtail:latest
+    container_name: promtail
+    volumes:
+      - /var/log:/var/log
+      - /var/lib/docker/containers:/var/lib/docker/containers
+      - ./promtail:/etc/promtail-config/
+    command: -config.file=/etc/promtail-config/promtail.yml
