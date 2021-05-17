@@ -84,4 +84,7 @@ temperature:
     chamber: null
     extruder: 180
     name: PLA
-
+webcam:
+  ffmpeg: /usr/bin/ffmpeg
+  snapshot: live.jpg
+  stream: hls/live.stream.m3u8
