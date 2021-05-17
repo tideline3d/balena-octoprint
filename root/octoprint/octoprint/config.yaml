@@ -84,7 +84,4 @@ temperature:
     chamber: null
     extruder: 180
     name: PLA
-webcam:
-  ffmpeg: /usr/bin/ffmpeg
-  snapshot: http://localhost:8080/?action=snapshot
-  stream: /webcam/?action=stream
+
