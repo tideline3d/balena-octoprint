@@ -1,8 +1,10 @@
 accessControl:
   salt: HeiITgEYC1Zz9eAvghWAZEJTl1UQgFAw
+  #This is terrible, don't use these keys.  Will replace them with Github/Balena secrets
   userfile: /octoprint/octoprint/users.yaml
 api:
   allowCrossOrigin: true
+  #This is terrible, don't use this key.  Should be generated from Github/Balena secrets eventually
   key: 62BFEB0AC6C44DABB2AA7A6E1148474A
 plugins:
   firmwareupdater:
@@ -44,6 +46,7 @@ plugins:
   discovery:
     upnpUuid: cb75080a-2627-4375-8d1d-e98f8b46b694
   errortracking:
+    #Probably should re-generate these for each instance to not mess with Gina's reporting
     unique_id: f6ff05df-c12e-46c4-a180-e82fc67e7489
   gcodeviewer:
     _config_version: 1
@@ -51,6 +54,7 @@ plugins:
     _config_version: 9
   tracking:
     enabled: true
+      #Probably should re-generate these for each instance to not mess with Gina's reporting
     unique_id: ea1e1779-820f-4dc9-a02d-37e982ba2228
   virtual_printer:
     _config_version: 1
@@ -64,6 +68,7 @@ server:
     enabled: true
   pluginBlacklist:
     enabled: true
+  #This is terrible, don't use this key.  Should be generated from Github/Balena secrets eventually
   secretKey: fZRUcxXFwut5GNg6oiAAq67mLdjCGDkw
   seenWizards:
     backup: null

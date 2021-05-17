@@ -1,3 +1,4 @@
 josh:
-- api_key: 22AD18A0F3D74212B1FAECC29AAD207A
+- api_key: 22AD18A0F3D74212B1FAECC29AAD207A 
   app_id: OctoPod
+  #This is terrible, don't use these keys.  Will pull them from secrets eventually.
