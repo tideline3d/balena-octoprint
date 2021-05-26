@@ -71,7 +71,7 @@ WORKDIR /octoprint
 RUN PYTHONUSERBASE=/usr/local/ pip install --no-cache-dir \
     "https://github.com/tg44/OctoPrint-Prometheus-Exporter/archive/refs/tags/0.1.7.zip" \
     "https://github.com/gdombiak/OctoPod/archive/refs/tags/3.11.zip" \
-    "https://github.com/OllisGit/OctoPrint-PrintJobHistory/releases/download/1.13.0/master.zip" \
+    "https://github.com/OllisGit/OctoPrint-PrintJobHistory/releases/download/1.14.0/master.zip" \
     "https://github.com/markwal/OctoPrint-SnapStream/archive/refs/tags/0.3.zip" \
     "https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/refs/tags/1.11.0.zip" \
     "https://github.com/Birkbjo/OctoPrint-Themeify/archive/refs/tags/v1.2.2.zip" \
