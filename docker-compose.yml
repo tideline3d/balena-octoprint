@@ -25,7 +25,6 @@ services:
     #  - octoprint:/octoprint
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
-    container_name: node_exporter
     restart: always
     environment:
       - 'SCRAPE_PORT=9100'
@@ -40,13 +39,11 @@ services:
       io.balena.features.dbus: '1'
   restreamer:
     image: datarhei/restreamer-aarch64:latest
-    container_name: restreamer
     restart: always
     ports:
       - 8080:8080
   promtail:
     build: ./promtail
-    container_name: promtail
     restart: always
     depends_on:
       - octoprint
