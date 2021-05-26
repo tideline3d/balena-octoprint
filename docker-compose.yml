@@ -52,6 +52,6 @@ services:
       - octoprint
     volumes:
       - octoprint-logs:/octoprint-logs
-    command: -config.file=/etc/promtail/promtail.yml -log.level=debug
+    command: -config.file=/etc/promtail/promtail.yml -log.level=debug -config.expand-env=true
     labels:
       io.balena.features.journal-logs: '1'
