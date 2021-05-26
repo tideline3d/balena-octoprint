@@ -52,6 +52,6 @@ services:
       - octoprint
     volumes:
       - octoprint-logs:/octoprint-logs
-    command: -config.file=/etc/promtail/promtail.yml -log.level=debug --client.external-labels=host=${OCTOPRINT_HOSTNAME}
+    command: -config.file=/etc/promtail/promtail.yml -log.level=debug --client.external-labels=host=${hostname}
     labels:
       io.balena.features.journal-logs: '1'
