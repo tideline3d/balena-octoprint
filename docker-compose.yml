@@ -10,19 +10,19 @@ services:
     privileged: true
     ports:
       - '80:5000'
-  config-editor:
-    image: linuxserver/code-server
-    ports:
-      - 8443:8443
-    depends_on:
-      - octoprint
-    restart: unless-stopped
-    environment:
-      - PUID=0
-      - GUID=0
-      - TZ=America/NewYork
-    #volumes:
-    #  - octoprint:/octoprint
+  # config-editor:
+  #   image: linuxserver/code-server
+  #   ports:
+  #     - 8443:8443
+  #   depends_on:
+  #     - octoprint
+  #   restart: unless-stopped
+  #   environment:
+  #     - PUID=0
+  #     - GUID=0
+  #     - TZ=America/NewYork
+  #   #volumes:
+  #   #  - octoprint:/octoprint
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
     restart: always
