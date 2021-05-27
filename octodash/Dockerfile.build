@@ -1,0 +1,72 @@
+###
+# Build stage
+##
+FROM balenalib/%%BALENA_MACHINE_NAME%%-node:latest-build as build
+ARG octodash_version=v2.1.1
+RUN echo "arch=$(uname -m)" > ~/.npmrc
+
+# Move to app dir
+WORKDIR /usr/src/app
+
+# Install build dependencies
+RUN install_packages \
+  apt-utils \
+  clang \
+  libxcb-image0 \
+  libxcb-util0 \
+  xdg-utils \
+  libdbus-1-dev \
+  libgtk2.0-dev \
+  libnotify-dev \
+  libgnome-keyring-dev \
+  libgconf2-dev \
+  libasound2-dev \
+  libcap-dev \
+  libcups2-dev \
+  libxtst-dev \
+  libxss1 \
+  libnss3-dev \
+  libsmbclient \
+  libssh-4 \
+  libexpat-dev \
+  git
+
+# Clone project to filesystem, checkout octodash_version and remove git index to save space 
+RUN git clone https://github.com/UnchartedBull/OctoDash.git && cd OctoDash && git checkout $octodash_version && rm -rf .git
+
+# Install npm modules for the application and compile
+RUN cd OctoDash && npm install && npm run ng:build
+
+###
+# Runtime
+##
+FROM balenalib/%%BALENA_MACHINE_NAME%%-node:latest-run
+RUN echo "arch=$(uname -m)" > ~/.npmrc
+
+# Move to app dir
+WORKDIR /usr/src/app
+
+# Install runtime dependencies
+
+RUN install_packages \
+  xserver-xorg-core \
+  xserver-xorg-input-all \
+  xserver-xorg-video-fbdev \
+  xorg \
+  libgtk3.0 \
+  libnss3 \
+  libxss1 \
+  libasound2 \
+  jq
+
+RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
+  && echo "" >> /etc/X11/xinit/xserverrc \
+  && echo 'exec /usr/bin/X -s 0 dpms -nocursor -nolisten tcp "$@"' >> /etc/X11/xinit/xserverrc
+
+# Copy the app from the build step
+COPY --from=build /usr/src/app/OctoDash /usr/src/app/OctoDash
+
+COPY ./start.sh /usr/src/app/start.sh
+COPY config.json /root/.config/octodash/config.json
+
+CMD ["bash","/usr/src/app/start.sh"]
