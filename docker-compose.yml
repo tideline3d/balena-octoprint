@@ -1,8 +1,12 @@
 version: '2'
 volumes:
   octoprint-logs: {}
+networks:
+  backend:
 services:
   octoprint:
+    networks:
+      - backend 
     build: ./
     restart: always
     volumes:
@@ -57,6 +61,8 @@ services:
     labels:
       io.balena.features.journal-logs: '1'
   octodash:
+    networks:
+      - backend
     restart: always
     build: ./octodash
     privileged: true
