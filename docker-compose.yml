@@ -25,6 +25,7 @@ services:
   #   #  - octoprint:/octoprint
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
+    privileged: true
     restart: always
     environment:
       - 'SCRAPE_PORT=9100'
