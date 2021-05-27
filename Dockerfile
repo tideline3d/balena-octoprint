@@ -78,8 +78,9 @@ RUN PYTHONUSERBASE=/usr/local/ pip install --no-cache-dir \
     "https://github.com/eyal0/OctoPrint-PrintTimeGenius/archive/refs/tags/2.2.8.zip" \
     "https://github.com/jneilliii/OctoPrint-TPLinkSmartplug/archive/refs/tags/1.0.1.zip" \
     "https://github.com/tideline3d/OctoPrint-GitFiles/archive/refs/tags/1.1.5_t3d_4.zip" \
-    "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/refs/tags/1.0.1.zip"
-
+    "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/refs/tags/1.0.1.zip" \
+    "https://github.com/OllisGit/OctoPrint-SpoolManager/releases/download/1.4.3/master.zip"
+    
 # port to access haproxy frontend
 EXPOSE 80
 
