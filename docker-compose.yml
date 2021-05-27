@@ -70,3 +70,6 @@ services:
       - UDEV=1
     depends_on:
       - octoprint
+    labels:
+      io.balena.features.dbus: '1'
+      
