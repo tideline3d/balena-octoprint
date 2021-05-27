@@ -1,6 +1,8 @@
 version: '2'
 volumes:
   octoprint-logs: {}
+networks:
+  backend:
 services:
   octoprint:
     build: ./
@@ -10,6 +12,8 @@ services:
     privileged: true
     ports:
       - '80:5000'
+    networks:
+      - backend
   # config-editor:
   #   image: linuxserver/code-server
   #   ports:
@@ -43,6 +47,8 @@ services:
     restart: always
     ports:
       - 8080:8080
+    networks: 
+      - backend
   promtail:
     build: ./promtail
     restart: always
@@ -61,3 +67,5 @@ services:
       - UDEV=1
     depends_on:
       - octoprint
+    networks:
+      - backend
