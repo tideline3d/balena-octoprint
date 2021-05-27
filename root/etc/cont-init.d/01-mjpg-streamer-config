@@ -7,6 +7,4 @@ if ! $ENABLE_MJPG_STREAMER; then
   rm -rf /etc/services.d/mjpg-streamer
 fi
 
-exec HOSTIP=$(curl -s GET -H "Authorization: Bearer $BALENA_SUPERVISOR_API_KEY"   -H "Content-Type: application/json"    "$BALENA_SUPERVISOR_ADDRESS/v1/device" | jq -r .ip_address)
-
-exec octoprint --basedir /octoprint/octoprint config set --json webcam "{\"ffmpeg\":\"/usr/bin/ffmpeg\",\"snapshot\":\"http://$HOSTIP:8080/images/live.jpg\",\"stream\":\"http://$HOSTIP:8080/hls/live.stream.m3u8\"}"
+exec HOSTIP=$(curl -s GET -H "Authorization: Bearer $BALENA_SUPERVISOR_API_KEY"   -H "Content-Type: application/json"    "$BALENA_SUPERVISOR_ADDRESS/v1/device" | jq -r .ip_address); octoprint --basedir /octoprint/octoprint config set --json webcam "{\"ffmpeg\":\"/usr/bin/ffmpeg\",\"snapshot\":\"http://$HOSTIP:8080/images/live.jpg\",\"stream\":\"http://$HOSTIP:8080/hls/live.stream.m3u8\"}"
