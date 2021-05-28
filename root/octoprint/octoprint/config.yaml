@@ -6,6 +6,8 @@ api:
   allowCrossOrigin: true
   #This is terrible, don't use this key.  Should be generated from Github/Balena secrets eventually
   key: 62BFEB0AC6C44DABB2AA7A6E1148474A
+feature:
+  modelSizeDetection: false
 plugins:
   firmwareupdater:
     avrdude_avrmcu: m2560
