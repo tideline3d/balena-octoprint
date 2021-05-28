@@ -101,3 +101,20 @@ webcam:
   ffmpeg: /usr/bin/ffmpeg
   snapshot: live.jpg
   stream: hls/live.stream.m3u8
+events:
+  enabled: True
+  subscriptions:
+  - event: PrintStarted
+    command: lockfile /tmp/balena/updates.lock
+    type: system
+    debug: true
+  - event:
+    - Error
+    - Disconnected
+    - PrintFailed
+    - PrintDone
+    - PrintCancelled
+    command: rm -f /tmp/balena/updates.lock
+    type: system
+    debug: true
+
