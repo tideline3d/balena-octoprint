@@ -1,5 +1,5 @@
 #!/usr/bin/with-contenv bash
-mkdir /root/.ssh; touch /root/.ssh/id_rsa; echo $GITHUB_SSHKEY > /root/.ssh/id_rsa; echo $GITHUB_PUBLICKEY > /root/.ssh/id_rsa.pub; chown -R root:root /root/.ssh; chmod -R 600 /root/.ssh/id_rsa
+mkdir /root/.ssh; echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config; echo $GITHUB_SSHKEY | sed -e "s/-----BEGIN OPENSSH PRIVATE KEY-----/&\n/"    -e "s/-----END OPENSSH PRIVATE KEY-----/\n&/"    -e "s/\S\{64\}/&\n/g"\ > /root/.ssh/id_rsa; chown -R root:root /root/.ssh; chmod -R 600 /root/.ssh/id_rsa
 
 -----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAACFwAAAAdzc2gtcn
