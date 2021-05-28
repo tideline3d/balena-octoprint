@@ -1,6 +1,7 @@
 version: '2'
 volumes:
   octoprint-logs: {}
+  github: {}
 networks:
   backend:
 services:
@@ -11,6 +12,7 @@ services:
     restart: always
     volumes:
       - octoprint-logs:/octoprint/octoprint/logs
+      - github:/octoprint/octoprint/uploads/GitHub
     privileged: true
     ports:
       - '80:5000'

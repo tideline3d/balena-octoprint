@@ -70,6 +70,7 @@ plugins:
       printerName: Dev3
   gitfiles:
     url: git@github.com:/tideline3d/gcode.git
+    path: GitHub
 printerProfiles:
   default: _default
 server:
