@@ -97,14 +97,10 @@ server:
     tracking: null
 temperature:
   profiles:
-  - bed: 100
+  - bed: 80
     chamber: null
-    extruder: 210
-    name: ABS
-  - bed: 60
-    chamber: null
-    extruder: 180
-    name: PLA
+    extruder: 230
+    name: PETG
 webcam:
   ffmpeg: /usr/bin/ffmpeg
   snapshot: live.jpg
