@@ -39,6 +39,7 @@ RUN apt-get update && apt-get install -y \
   libjpeg62-turbo \
   libprotobuf-dev \
   libv4l-dev \
+  nano \
   openssh-client \
   v4l-utils \
   xz-utils \
