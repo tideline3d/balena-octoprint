@@ -71,6 +71,8 @@ plugins:
   gitfiles:
     url: git@github.com:/tideline3d/gcode.git
     path: GitHub
+  pi_support:
+    vcgencmd_throttle_check_enabled: false
 printerProfiles:
   default: _default
 server:
