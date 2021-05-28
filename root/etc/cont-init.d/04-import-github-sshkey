@@ -1,0 +1,2 @@
+#!/usr/bin/with-contenv bash
+touch /home/root/.ssh/id_rsa | echo $GITHUB_SSHKEY > /home/root/.ssh/id_rsa | chown -R root:root /home/root/.ssh
