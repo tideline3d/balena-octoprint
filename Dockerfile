@@ -41,6 +41,7 @@ RUN apt-get update && apt-get install -y \
   libv4l-dev \
   nano \
   openssh-client \
+  procmail \ 
   v4l-utils \
   xz-utils \
   zlib1g-dev
