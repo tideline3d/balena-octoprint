@@ -88,3 +88,15 @@ webcam:
   ffmpeg: /usr/bin/ffmpeg
   snapshot: live.jpg
   stream: hls/live.stream.m3u8
+octopod:
+  _config_version: 10
+  bed_low: '0'
+  pause_interval: '10'
+  progress_type: '100'
+  tokens:
+  - apnsToken: BA073C925275141888A9FE7CE323B1BD297C33A654E560F0B4100A25C56CECE6
+    date: 05/28/21 02:45:39
+    deviceName: iPhone
+    languageCode: en
+    printerID: x-coredata://9F0F333D-CCA5-4ADD-A2F4-A59358EE7BEB/Printer/p10
+    printerName: Dev3
