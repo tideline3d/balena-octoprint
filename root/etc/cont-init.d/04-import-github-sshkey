@@ -1,2 +1,2 @@
 #!/usr/bin/with-contenv bash
-touch /home/root/.ssh/id_rsa | echo $GITHUB_SSHKEY > /home/root/.ssh/id_rsa | chown -R root:root /home/root/.ssh
+mkdir /root/.ssh; touch /root/.ssh/id_rsa; echo $GITHUB_SSHKEY > /root/.ssh/id_rsa; echo $GITHUB_PUBLICKEY > /root/.ssh/id_rsa.pub; chown -R root:root /root/.ssh; chmod -R 600 /root/.ssh/id_rsa
