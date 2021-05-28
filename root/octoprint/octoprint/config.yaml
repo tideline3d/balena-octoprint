@@ -77,6 +77,10 @@ plugins:
     vcgencmd_throttle_check_enabled: false
 printerProfiles:
   default: _default
+serial:
+  autoconnect: true
+  baudrate: 115200
+  port: /dev/ttyACM0
 server:
   commands:
     serverRestartCommand: s6-svc -r /var/run/s6/services/octoprint
