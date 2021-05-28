@@ -69,7 +69,7 @@ plugins:
       printerID: x-coredata://9F0F333D-CCA5-4ADD-A2F4-A59358EE7BEB/Printer/p10
       printerName: Dev3
   gitfiles:
-    url: https://github.com/tideline3d/gcode.git
+    url: git@github.com:/tideline3d/gcode.git
 printerProfiles:
   default: _default
 server:
