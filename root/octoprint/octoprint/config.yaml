@@ -9,6 +9,8 @@ api:
 feature:
   modelSizeDetection: false
 plugins:
+  _disabled:
+    - pi_support
   firmwareupdater:
     avrdude_avrmcu: m2560
     avrdude_baudrate: ''
@@ -73,8 +75,6 @@ plugins:
   gitfiles:
     url: git@github.com:/tideline3d/gcode.git
     path: GitHub
-  pi_support:
-    vcgencmd_throttle_check_enabled: false
 printerProfiles:
   default: _default
 serial:
