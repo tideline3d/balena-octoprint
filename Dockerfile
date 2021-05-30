@@ -6,16 +6,9 @@ ENV S6_VERSION ${S6_RELEASE:-v2.1.0.0}
 RUN apt-get update && apt-get install -y curl
 RUN echo "$(dpkg --print-architecture)"
 WORKDIR /tmp
-RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
-  && case "${dpkgArch##*-}" in \
-  amd64) ARCH='amd64';; \
-  arm64) ARCH='aarch64';; \
-  armhf) ARCH='armhf';; \
-  *) echo "unsupported architecture: $(dpkg --print-architecture)"; exit 1 ;; \
-  esac \
-  && set -ex \
+RUN set -ex \
   && echo $S6_VERSION \
-  && curl -fsSLO "https://github.com/just-containers/s6-overlay/releases/download/$S6_VERSION/s6-overlay-$ARCH.tar.gz"
+  && curl -fsSLO "https://github.com/just-containers/s6-overlay/releases/download/$S6_VERSION/s6-overlay-%%BALENA_ARCH%%.tar.gz"
 
 
 FROM python:${PYTHON_BASE_IMAGE} AS build
@@ -55,10 +48,11 @@ RUN s6tar=$(find /tmp -name "s6-overlay-*.tar.gz") \
 
 
 #install balena wifi-connect for configuring wifi on first boot
-ARG VERSION="4.4.5"
-RUN curl -Ls https://github.com/balena-io/wifi-connect/releases/download/v$VERSION/wifi-connect-v$VERSION-linux-$ARCH.tar.gz \
+ARG WIFI-CONNECT-VERSION
+ENV WIFI-CONNECT-VERSION="4.4.5"
+RUN curl -Ls https://github.com/balena-io/wifi-connect/releases/download/v${WIFI-CONNECT-VERSION}/wifi-connect-v$WIFI-CONNECT-VERSION-linux-%%BALENA_ARCH%%.tar.gz \
   && mkdir -p /opt/wifi-connect \
-  && tar -xvzf wifi-connect-v$VERSION-linux-$ARCH.tar.gz -C  ./wifi-connect  --no-same-owner
+  && tar -xvzf wifi-connect-v$WIFI-CONNECT-VERSION-linux-$ARCH.tar.gz -C  ./wifi-connect  --no-same-owner
 
 
 
