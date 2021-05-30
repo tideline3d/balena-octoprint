@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/with-contenv sh
+
 export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 
 if [ "$WIFI_AUTOCONFIGURE" = "true" ]; then
