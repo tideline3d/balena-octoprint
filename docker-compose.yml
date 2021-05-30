@@ -62,6 +62,15 @@ services:
     command: -config.file=/etc/promtail/promtail.yml -log.level=debug -config.expand-env=true
     labels:
       io.balena.features.journal-logs: '1'
+  wifi-connect:
+      build: ./wifi-connect
+      network_mode: "host"
+      labels:
+          io.balena.features.dbus: '1'
+      cap_add:
+          - NET_ADMIN
+      environment:
+          DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
   # octodash:
   #   networks:
   #     - backend
