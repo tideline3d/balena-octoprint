@@ -26,7 +26,7 @@ if [ $? -eq 0 ]; then
     printf 'Skipping WiFi Connect\n'
 else
     printf 'Starting WiFi Connect\n'
-    /opt/wifi-connect/wifi-connect --portal-listening-port 5000 --portal-gateway 10.52.32.1 --portal-dhcp-range 10.52.32.2,10.52.32.200 --portal-ssid OctoPrint-$OCTOPRINT_HOSTNAME
+    /opt/wifi-connect/wifi-connect --portal-listening-port 5000 --portal-gateway 10.52.32.1 --portal-dhcp-range 10.52.32.2,10.52.32.200 --portal-ssid OctoPrint-$OCTOPRINT_HOSTNAME --ui-directory /opt/wifi-connect/ui
 fi
 
 exec octoprint serve --iknowwhatimdoing --host 0.0.0.0 --port 5000 --basedir /octoprint/octoprint 
