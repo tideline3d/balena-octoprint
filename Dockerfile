@@ -17,13 +17,6 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && echo $S6_VERSION \
   && curl -fsSLO "https://github.com/just-containers/s6-overlay/releases/download/$S6_VERSION/s6-overlay-$ARCH.tar.gz"
 
-RUN install_packages dnsmasq wireless-tools
-
-WORKDIR /usr/src/app
-
-ARG VERSION="4.4.5"
-RUN curl -Ls "https://github.com/balena-io/wifi-connect/releases/download/v$VERSION/wifi-connect-v$VERSION-linux-%%BALENA_ARCH%%.tar.gz" \
-  | tar -xvz -C  /usr/src/app/
 
 FROM python:${PYTHON_BASE_IMAGE} AS build
 
@@ -35,6 +28,7 @@ RUN apt-get update && apt-get install -y \
   build-essential \
   cmake \
   curl \
+  dnsmasq \
   imagemagick \
   ffmpeg \
   fontconfig \
@@ -50,6 +44,7 @@ RUN apt-get update && apt-get install -y \
   openssh-client \
   procmail \ 
   v4l-utils \
+  wireless-tools \
   xz-utils \
   zlib1g-dev
 
@@ -57,6 +52,14 @@ RUN apt-get update && apt-get install -y \
 COPY --from=s6build /tmp /tmp
 RUN s6tar=$(find /tmp -name "s6-overlay-*.tar.gz") \
   && tar xzf $s6tar -C / 
+
+
+#install balena wifi-connect for configuring wifi on first boot
+ARG VERSION="4.4.5"
+RUN curl -Ls "https://github.com/balena-io/wifi-connect/releases/download/v$VERSION/wifi-connect-v$VERSION-linux-%%BALENA_ARCH%%.tar.gz" \
+  && mkdir -p /opt/wifi-connect \
+  && tar -xvzf wifi-connect-v$VERSION-linux-%%BALENA_ARCH%%.tar.gz -C  ./wifi-connect  --no-same-owner
+
 
 # Install octoprint
 RUN	curl -fsSLO --compressed --retry 3 --retry-delay 10 \
