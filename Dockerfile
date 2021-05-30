@@ -56,9 +56,10 @@ RUN s6tar=$(find /tmp -name "s6-overlay-*.tar.gz") \
 
 #install balena wifi-connect for configuring wifi on first boot
 ARG VERSION="4.4.5"
-RUN curl -Ls "https://github.com/balena-io/wifi-connect/releases/download/v$VERSION/wifi-connect-v$VERSION-linux-$ARCH.tar.gz" \
+RUN curl -Ls https://github.com/balena-io/wifi-connect/releases/download/v$VERSION/wifi-connect-v$VERSION-linux-$ARCH.tar.gz \
   && mkdir -p /opt/wifi-connect \
-  && tar -xvzf wifi-connect-v$VERSION-linux-%%BALENA_ARCH%%.tar.gz -C  ./wifi-connect  --no-same-owner
+  && tar -xvzf wifi-connect-v$VERSION-linux-$ARCH.tar.gz -C  ./wifi-connect  --no-same-owner
+
 
 
 # Install octoprint
