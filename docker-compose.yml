@@ -6,8 +6,6 @@ networks:
   backend:
 services:
   octoprint:
-    networks:
-      - backend 
     build: ./
     restart: always
     volumes:
@@ -18,7 +16,13 @@ services:
       - '80:5000'
     labels:
       io.balena.features.supervisor-api: '1'
-      io.balena.features.balena-api: '1'   
+      io.balena.features.balena-api: '1'  
+      io.balena.features.dbus: '1'
+    network_mode: "host"
+    cap_add:
+        - NET_ADMIN
+    environment:
+        DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
   # config-editor:
   #   image: linuxserver/code-server
   #   ports:
@@ -62,15 +66,6 @@ services:
     command: -config.file=/etc/promtail/promtail.yml -log.level=debug -config.expand-env=true
     labels:
       io.balena.features.journal-logs: '1'
-  wifi-connect:
-      build: ./wifi-connect
-      network_mode: "host"
-      labels:
-          io.balena.features.dbus: '1'
-      cap_add:
-          - NET_ADMIN
-      environment:
-          DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
   # octodash:
   #   networks:
   #     - backend
