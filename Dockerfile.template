@@ -48,9 +48,8 @@ RUN s6tar=$(find /tmp -name "s6-overlay-*.tar.gz") \
 
 
 #install balena wifi-connect for configuring wifi on first boot
-RUN curl -Ls https://github.com/balena-io/wifi-connect/releases/download/v4.4.5/wifi-connect-v4.4.5-linux-%%BALENA_ARCH%%.tar.gz \
-  && mkdir -p /opt/wifi-connect \
-  && tar -xvzf wifi-connect-v4.4.5-linux-%%BALENA_ARCH%%.tar.gz -C  ./wifi-connect  --no-same-owner
+RUN curl -fsSLO --compressed --retry 3 --retry-delay 10 https://github.com/balena-io/wifi-connect/releases/download/v4.4.5/wifi-connect-v4.4.5-linux-%%BALENA_ARCH%%.tar.gz \
+  && mkdir /opt/wifi-connect && tar -xvzf wifi-connect-v4.4.5-linux-%%BALENA_ARCH%%cu.tar.gz -C /opt/wifi-connect
 
 
 
