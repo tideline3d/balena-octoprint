@@ -17,6 +17,13 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && echo $S6_VERSION \
   && curl -fsSLO "https://github.com/just-containers/s6-overlay/releases/download/$S6_VERSION/s6-overlay-$ARCH.tar.gz"
 
+RUN install_packages dnsmasq wireless-tools
+
+WORKDIR /usr/src/app
+
+ARG VERSION="4.4.5"
+RUN curl -Ls "https://github.com/balena-io/wifi-connect/releases/download/v$VERSION/wifi-connect-v$VERSION-linux-%%BALENA_ARCH%%.tar.gz" \
+  | tar -xvz -C  /usr/src/app/
 
 FROM python:${PYTHON_BASE_IMAGE} AS build
 
