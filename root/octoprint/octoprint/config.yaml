@@ -75,6 +75,10 @@ plugins:
   gitfiles:
     url: git@github.com:/tideline3d/gcode.git
     path: GitHub
+  custombackground:
+    _config_version: 1
+    background_url: /plugin/custombackground/custom/uploaded.png?20210531030534
+    uploaded_url: /plugin/custombackground/custom/uploaded.png?20210531030534
 printerProfiles:
   default: _default
 serial:
