@@ -66,12 +66,12 @@ plugins:
     pause_interval: '10'
     progress_type: '100'
     tokens:
-    - apnsToken: BA073C925275141888A9FE7CE323B1BD297C33A654E560F0B4100A25C56CECE6
+    - apnsToken: $OCTOPOD_APNS  #These will be updated from env variables on startup
       date: 05/28/21 02:45:39
       deviceName: iPhone
       languageCode: en
-      printerID: x-coredata://9F0F333D-CCA5-4ADD-A2F4-A59358EE7BEB/Printer/p10
-      printerName: Dev3
+      printerID: $OCTOPOD_PRINTERID
+      printerName: $OCTOPOD_HOSTNAME
   gitfiles:
     url: git@github.com:/tideline3d/gcode.git
     path: GitHub
