@@ -14,8 +14,6 @@ services:
       - slicer-thumbnails:/octoprint/octoprint/data/prusaslicerthumbnails
       - printtime-genius:/octoprint/octoprint/data/PrintTimeGenius
     privileged: true
-    ports:
-      - '80:5000'
     labels:
       io.balena.features.supervisor-api: '1'
       io.balena.features.balena-api: '1'  
