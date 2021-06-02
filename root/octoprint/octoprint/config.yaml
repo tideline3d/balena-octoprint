@@ -72,6 +72,10 @@ plugins:
       languageCode: en
       printerID: $OCTOPOD_PRINTERID
       printerName: $OCTOPOD_HOSTNAME
+  prusaslicerthumbnails:
+    inline_thumbnail: true
+    inline_thumbnail_position_left: true
+    scale_inline_thumbnail: true
   gitfiles:
     url: git@github.com:/tideline3d/gcode.git
     path: GitHub
