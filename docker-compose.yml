@@ -4,8 +4,6 @@ volumes:
   github: {}
   slicer-thumbnails: {}
   printtime-genius: {}
-networks:
-  backend:
 services:
   octoprint:
     build: ./
@@ -27,19 +25,6 @@ services:
         - NET_ADMIN
     environment:
         DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
-  # config-editor:
-  #   image: linuxserver/code-server
-  #   ports:
-  #     - 8443:8443
-  #   depends_on:
-  #     - octoprint
-  #   restart: unless-stopped
-  #   environment:
-  #     - PUID=0
-  #     - GUID=0
-  #     - TZ=America/NewYork
-  #   #volumes:
-  #   #  - octoprint:/octoprint
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
     privileged: true
@@ -70,15 +55,3 @@ services:
     command: -config.file=/etc/promtail/promtail.yml -log.level=debug -config.expand-env=true
     labels:
       io.balena.features.journal-logs: '1'
-  # octodash:
-  #   networks:
-  #     - backend
-  #   restart: always
-  #   build: ./octodash
-  #   privileged: true
-  #   environment:
-  #     - UDEV=1
-  #   depends_on:
-  #     - octoprint
-  #   labels:
-  #     io.balena.features.dbus: '1'
