@@ -11,6 +11,8 @@ services:
     volumes:
       - octoprint-logs:/octoprint/octoprint/logs
       - github:/octoprint/octoprint/uploads/GitHub
+      - slicer-thumbnails:/octoprint/octoprint/data/prusaslicerthumbnails
+      - printtime-genius:/octoprint/octoprint/data/PrintTimeGenius
     privileged: true
     ports:
       - '80:5000'
