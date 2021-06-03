@@ -23,8 +23,6 @@ services:
         - NET_ADMIN
     environment:
         DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
-    devices:
-      - /dev/video0:/dev/video0
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
     privileged: true
@@ -45,6 +43,8 @@ services:
     restart: always
     ports:
       - 8080:8080
+    devices:
+       - /dev/video0:/dev/video
   promtail:
     build: ./promtail
     restart: always
