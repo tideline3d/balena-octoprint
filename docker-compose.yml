@@ -44,7 +44,7 @@ services:
     ports:
       - 8080:8080
     devices:
-       - /dev/video0:/dev/video0
+       - /dev/video0:/dev/video
   promtail:
     build: ./promtail
     restart: always
