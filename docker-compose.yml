@@ -41,6 +41,7 @@ services:
   restreamer:
     image: datarhei/restreamer-aarch64:latest
     restart: always
+    privileged: true
     ports:
       - 8080:8080
     devices:
