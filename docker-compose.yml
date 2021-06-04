@@ -44,8 +44,8 @@ services:
     privileged: true
     ports:
       - 8080:8080
-    devices:
-       - /dev/video0:/dev/video
+    device_cgroup_rules:
+      - 'c 81:* rmw'
   promtail:
     build: ./promtail
     restart: always
