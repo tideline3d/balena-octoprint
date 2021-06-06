@@ -65,13 +65,6 @@ plugins:
     bed_low: '0'
     pause_interval: '10'
     progress_type: '100'
-    tokens:
-    - apnsToken: $OCTOPOD_APNS  #These will be updated from env variables on startup
-      date: 05/28/21 02:45:39
-      deviceName: iPhone
-      languageCode: en
-      printerID: $OCTOPOD_PRINTERID
-      printerName: $OCTOPOD_HOSTNAME
   prusaslicerthumbnails:
     inline_thumbnail: true
     inline_thumbnail_position_left: true
