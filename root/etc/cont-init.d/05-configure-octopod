@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv bash
 #Add notification token and change device name based on Env Var
 #These need to be created for each device and added as a device specific service variable.
-octoprint --basedir /octoprint/octoprint config set --json plugins.octopod.tokens "{\"apnsToken\": \"$OCTOPOD_APNS\",\"date\": \"05\/28\/21 02:45:39\",\"deviceName\": \"iPhone\",\"languageCode\": \"en\",\"printerID\": \"$OCTOPOD_PRINTERID\",\"printerName\": \"$OCTOPRINT_HOSTNAME\"}"
+octoprint --basedir /octoprint/octoprint config set --json plugins.octopod.tokens "[{\"apnsToken\": \"$OCTOPOD_APNS\",\"date\": \"05\/28\/21 02:45:39\",\"deviceName\": \"iPhone\",\"languageCode\": \"en\",\"printerID\": \"$OCTOPOD_PRINTERID\",\"printerName\": \"$OCTOPRINT_HOSTNAME\"}]"
