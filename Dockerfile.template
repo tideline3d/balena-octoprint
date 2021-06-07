@@ -85,6 +85,9 @@ ENV PATH "${PYTHONUSERBASE}/bin:${PATH}"
 # set WORKDIR 
 WORKDIR /octoprint
 
+#Install FilamentManager Dep
+RUN PYTHONUSERBASE=/octoprint/plugins/ pip install --no-cache-dir "psycopg2"
+
 RUN PYTHONUSERBASE=/octoprint/plugins/ pip install --no-cache-dir \
     "https://github.com/tg44/OctoPrint-Prometheus-Exporter/archive/refs/tags/0.1.7.zip" \
     "https://github.com/gdombiak/OctoPrint-OctoPod/archive/refs/tags/0.3.0.zip" \
