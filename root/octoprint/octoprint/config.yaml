@@ -137,4 +137,6 @@ events:
       "command": "git",
       "arg1": "pull"
       }'
+    type: system
+    debug: true
 
