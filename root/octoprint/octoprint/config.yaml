@@ -122,4 +122,19 @@ events:
     command: rm -f /tmp/balena/updates.lock
     type: system
     debug: true
+  - event: 
+    - Startup
+    - PrintDone
+    - UserLoggedIn
+    - ClientOpened
+    command: >-
+      curl -X POST \
+      http://127.0.0.1/api/plugin/gitfiles \
+      -H 'cache-control: no-cache' \
+      -H 'content-type: application/json' \
+      -H 'x-api-key: 22AD18A0F3D74212B1FAECC29AAD207A' \
+      -d '{
+      "command": "git",
+      "arg1": "pull"
+      }'
 
