@@ -1,3 +1,4 @@
+##$CAMERA_IP
 accessControl:
   salt: HeiITgEYC1Zz9eAvghWAZEJTl1UQgFAw
   #This is terrible, don't use these keys.  Will replace them with Github/Balena secrets
