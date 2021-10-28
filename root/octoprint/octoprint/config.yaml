@@ -24,11 +24,19 @@ plugins:
           ; instruct plugin to start recording responses from printer.\nG81\t\t\t\
           ; report mesh bed leveling status."
   PrintJobHistory:
-    capturePrintJobHistoryMode: always
-    pluginCheckActivated: false
     selectedFilamentTrackerPlugin: no plugin installed/enabled
+    capturePrintJobHistoryMode: always
+    externalDatabase:
+      database_name: postgres
+      enabled: true
+      host: 10.1.2.104
+      password: postgres #make this a variable soon
+      port: '5432'
+      username: postgres
+    pluginCheckActivated: false
     showPrintJobDialogAfterPrint: false
     takePluginThumbnailAfterPrint: false
+    sqlLoggingEnabled: true
   snapstream:
     fallbackonly: false
   announcements:
