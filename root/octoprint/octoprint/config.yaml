@@ -27,12 +27,12 @@ plugins:
     selectedFilamentTrackerPlugin: no plugin installed/enabled
     capturePrintJobHistoryMode: always
     externalDatabase:
-      database_name: postgres
+      database_name: postgres #make this a variable soon
       enabled: true
-      host: 10.1.2.104
+      host: 10.1.2.104 #make this a variable soon
       password: postgres #make this a variable soon
       port: '5432'
-      username: postgres
+      username: postgres #make this a variable soon
     pluginCheckActivated: false
     showPrintJobDialogAfterPrint: false
     takePluginThumbnailAfterPrint: false
