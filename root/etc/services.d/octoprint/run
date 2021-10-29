@@ -13,5 +13,6 @@ if [ "$WIFI_AUTOCONFIGURE" = "true" ]; then
         /opt/wifi-connect/wifi-connect --portal-listening-port 80 --portal-gateway 10.52.32.1 --portal-dhcp-range 10.52.32.2,10.52.32.200 --portal-ssid OctoPrint-$OCTOPRINT_HOSTNAME --ui-directory /opt/wifi-connect/ui
     fi
 fi 
+HOSTIP=$(hostname -I | awk '{print $1}')
 envsubst < /octoprint/octoprint/config.yaml.template >> /octoprint/octoprint/config.yaml
 exec octoprint serve --iknowwhatimdoing --host 0.0.0.0 --port 80 --basedir /octoprint/octoprint 
