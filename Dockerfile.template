@@ -97,8 +97,8 @@ WORKDIR /octoprint
      "https://github.com/tideline3d/OctoPrint-PrintJobHistory-ExternalDatabase/archive/refs/tags/1.2.1.zip" \
      "https://github.com/markwal/OctoPrint-SnapStream/archive/refs/tags/0.3.zip" \
      "https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/refs/tags/1.12.0.zip" \
-     "https://github.com/Birkbjo/OctoPrint-Themeify/archive/refs/tags/v1.2.2.zip" 
-    # "https://github.com/eyal0/OctoPrint-PrintTimeGenius/archive/refs/tags/2.2.8.zip" \
+     "https://github.com/Birkbjo/OctoPrint-Themeify/archive/refs/tags/v1.2.2.zip" \
+     "https://github.com/eyal0/OctoPrint-PrintTimeGenius/archive/refs/tags/2.2.8.zip" 
     # #"https://github.com/jneilliii/OctoPrint-TPLinkSmartplug/archive/refs/tags/1.0.1.zip" \
     # "https://github.com/tideline3d/OctoPrint-GitFiles/archive/refs/heads/master.zip" \
     # "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/refs/tags/1.1.0.zip" \
