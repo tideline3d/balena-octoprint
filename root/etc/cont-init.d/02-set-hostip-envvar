@@ -1,0 +1,2 @@
+#!/usr/bin/with-contenv bash
+HOSTIP=$(curl -s GET -H "Authorization: Bearer $BALENA_SUPERVISOR_API_KEY"   -H "Content-Type: application/json"    "$BALENA_SUPERVISOR_ADDRESS/v1/device" | jq -r .ip_address | cut -d' ' -f 1)
