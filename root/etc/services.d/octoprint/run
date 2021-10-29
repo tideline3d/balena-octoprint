@@ -14,5 +14,6 @@ if [ "$WIFI_AUTOCONFIGURE" = "true" ]; then
     fi
 fi 
 HOSTIP=$(curl -s GET -H "Authorization: Bearer $BALENA_SUPERVISOR_API_KEY"   -H "Content-Type: application/json"    "$BALENA_SUPERVISOR_ADDRESS/v1/device" | jq -r .ip_address | cut -d' ' -f 1)
+echo $HOSTIP
 envsubst < /octoprint/octoprint/config.yaml.template >> /octoprint/octoprint/config.yaml
 exec octoprint serve --iknowwhatimdoing --host 0.0.0.0 --port 80 --basedir /octoprint/octoprint 
