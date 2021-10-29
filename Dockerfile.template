@@ -14,7 +14,7 @@ RUN set -ex \
 FROM python:${PYTHON_BASE_IMAGE} AS build
 
 ARG octoprint_ref
-ENV octoprint_ref "1.7.0"
+ENV octoprint_ref "1.6.1"
 
 RUN apt-get update && apt-get install -y \
   avrdude \
