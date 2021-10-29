@@ -3,8 +3,7 @@ accessControl:
   userfile: /octoprint/octoprint/users.yaml
 api:
   allowCrossOrigin: true
-  #This is terrible, don't use this key.  Should be generated from Github/Balena secrets eventually
-  key: 62BFEB0AC6C44DABB2AA7A6E1148474A
+  key: $API_KEY
 feature:
   modelSizeDetection: false
 plugins:
@@ -28,10 +27,10 @@ plugins:
     externalDatabase:
       database_name: postgres #make this a variable soon
       enabled: true
-      host: 10.1.2.104 #make this a variable soon
-      password: postgres #make this a variable soon
+      host: $POSTGRES_HOST #make this a variable soon
+      password: $POSTGRES_PASSWORD #make this a variable soon
       port: '5432'
-      username: postgres #make this a variable soon
+      username: $POSTGRES_USERNAME #make this a variable soon
     pluginCheckActivated: false
     showPrintJobDialogAfterPrint: false
     takePluginThumbnailAfterPrint: false
@@ -68,17 +67,24 @@ plugins:
   virtual_printer:
     _config_version: 1
   octopod:
-    _config_version: 10
-    debug_logging: true
+    _config_version: 13
     bed_low: '0'
+    debug_logging: true
     pause_interval: '10'
     progress_type: '100'
+    tokens:
+    - apnsToken: $OCTOPOD_APNS
+      date: 05/28/21 02:45:39
+      deviceName: iPhone
+      languageCode: en
+      printerID: $OCTOPOD_PRINTERID
+      printerName: $OCTOPRINT_HOSTNAME
   prusaslicerthumbnails:
     inline_thumbnail: true
     inline_thumbnail_position_left: true
     scale_inline_thumbnail: true
   gitfiles:
-    url: git@github.com:/tideline3d/gcode.git
+    url: $GITFILES_URL
     path: GitHub
   custombackground:
     _config_version: 1
@@ -98,8 +104,7 @@ server:
     enabled: true
   pluginBlacklist:
     enabled: true
-  #This is terrible, don't use this key.  Should be generated from Github/Balena secrets eventually
-  secretKey: fZRUcxXFwut5GNg6oiAAq67mLdjCGDkw
+  secretKey: $SERVER_SECRETKEY
   seenWizards:
     backup: null
     corewizard: 4
