@@ -14,4 +14,4 @@ if [ "$WIFI_AUTOCONFIGURE" = "true" ]; then
     fi
 fi 
 
-exec octoprint serve --iknowwhatimdoing --host 0.0.0.0 --port 80 --basedir /octoprint/octoprint 
+exec envsubst < /octoprint/octoprint/config.yaml.template >> /octoprint/octoprint/config.yaml && octoprint serve --iknowwhatimdoing --host 0.0.0.0 --port 80 --basedir /octoprint/octoprint 

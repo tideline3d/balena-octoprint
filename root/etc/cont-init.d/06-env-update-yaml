@@ -1,5 +1,0 @@
-#!/usr/bin/with-contenv bash
-echo \$CAMERA_IP > /octoprint/test.file
-envsubst < /octoprint/test.file > /octoprint/output.file
-
-envsubst < /octoprint/octoprint/config.yaml.template > /octoprint/octoprint/config.yaml
