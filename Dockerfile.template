@@ -62,6 +62,7 @@ RUN	curl -fsSLO --compressed --retry 3 --retry-delay 10 \
   && tar xzf ${octoprint_ref}.tar.gz --strip-components 1 -C /opt/octoprint --no-same-owner
 
 WORKDIR /opt/octoprint
+RUN python3 setup.py version 
 RUN pip install .
 RUN mkdir -p /octoprint/octoprint /octoprint/plugins
 
