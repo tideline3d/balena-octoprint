@@ -8,7 +8,7 @@ RUN echo "$(dpkg --print-architecture)"
 WORKDIR /tmp
 RUN set -ex \
   && echo $S6_VERSION \
-  && curl -fsSLO "https://github.com/just-containers/s6-overlay/releases/download/$S6_VERSION/s6-overlay-%%BALENA_ARCH%%.tar.gz"
+  && curl -fsSLO "https://github.com/just-containers/s6-overlay/releases/download/$S6_VERSION/s6-overlay-aarch64.tar.gz"
 
 
 FROM python:${PYTHON_BASE_IMAGE} AS build
@@ -50,8 +50,8 @@ RUN s6tar=$(find /tmp -name "s6-overlay-*.tar.gz") \
 
 
 #install balena wifi-connect for configuring wifi on first boot
-RUN curl -fsSLO --compressed --retry 3 --retry-delay 10 https://github.com/balena-io/wifi-connect/releases/download/v4.4.0/wifi-connect-v4.4.0-linux-%%BALENA_ARCH%%.tar.gz \
-  && mkdir /opt/wifi-connect && tar -xvzf wifi-connect-v4.4.0-linux-%%BALENA_ARCH%%.tar.gz -C /opt/wifi-connect
+RUN curl -fsSLO --compressed --retry 3 --retry-delay 10 https://github.com/balena-io/wifi-connect/releases/download/v4.4.0/wifi-connect-v4.4.0-linux-aarch64.tar.gz \
+  && mkdir /opt/wifi-connect && tar -xvzf wifi-connect-v4.4.0-linux-aarch64.tar.gz -C /opt/wifi-connect
 
 
 
