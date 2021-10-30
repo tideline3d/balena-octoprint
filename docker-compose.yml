@@ -38,6 +38,7 @@ services:
       DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
     labels:
       io.balena.features.dbus: '1'
+      io.balena.features.supervisor-api: '1'
   restreamer:
     image: datarhei/restreamer-aarch64:latest
     restart: always
