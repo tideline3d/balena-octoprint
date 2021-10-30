@@ -1,0 +1,20 @@
+{
+  "name": "balena-octoprint",
+  "version": "1.0.0",
+  "description": "**Remotely control your 3d-printer with [OctoPrint](https://github.com/foosel/OctoPrint) and balenaCloud!** Octoprint is exposed on port 80 which can be remotely accessible via the balenaCloud [public URL](https://www.balena.io/docs/learn/develop/runtime/#public-device-urls) feature.",
+  "main": "index.js",
+  "scripts": {
+    "local": "grep -v '^#' .env | sed 's/^/--env /' | xargs balena push 10.1.2.150",
+    "deploy": "balena push my-application"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tideline3d/balena-octoprint.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tideline3d/balena-octoprint/issues"
+  },
+  "homepage": "https://github.com/tideline3d/balena-octoprint#readme"
+}
