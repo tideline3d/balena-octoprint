@@ -67,6 +67,7 @@ plugins:
     unique_id: ea1e1779-820f-4dc9-a02d-37e982ba2228
   virtual_printer:
     _config_version: 1
+    enabled: $VIRTUAL_PRINTER_ENABLED
   octopod:
     _config_version: 13
     bed_low: '0'
