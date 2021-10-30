@@ -37,6 +37,7 @@ plugins:
     sqlLoggingEnabled: true
   snapstream:
     fallbackonly: false
+    url: http://$OCTOPRINT_HOSTNAME.local:8080/images/live.jpg
   announcements:
     _config_version: 1
     channels:
@@ -117,7 +118,7 @@ temperature:
     name: PETG
 webcam:
   ffmpeg: /usr/bin/ffmpeg
-  snapshot: http://$OCTOPRINT_HOSTNAME.local:8080/images/live.jpg  #Octoprint Hostname $OCTOPRINT_HOSTNAME.local
+  snapshot: http://$OCTOPRINT_HOSTNAME.local:8080/images/live.jpg
   stream: http://$OCTOPRINT_HOSTNAME.local:8080/hls/live.stream.m3u8
 events:
   enabled: True
