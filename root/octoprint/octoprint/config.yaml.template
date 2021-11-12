@@ -26,7 +26,7 @@ plugins:
     capturePrintJobHistoryMode: always
     externalDatabase:
       database_name: postgres #make this a variable soon
-      enabled: true
+      enabled: $PRINT_JOB_HISTORY_EXTERNAL_DB
       host: $POSTGRES_HOST #make this a variable soon
       password: $POSTGRES_PASSWORD #make this a variable soon
       port: '5432'
