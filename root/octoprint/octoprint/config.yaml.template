@@ -71,7 +71,7 @@ plugins:
   octopod:
     _config_version: 13
     bed_low: '0'
-    debug_logging: true
+    debug_logging: $OCTOPOD_DEBUG_LOGGING
     pause_interval: '10'
     progress_type: '100'
     tokens:
