@@ -74,6 +74,7 @@ plugins:
     debug_logging: $OCTOPOD_DEBUG_LOGGING
     pause_interval: '10'
     progress_type: '100'
+    bed_target_temp_hold: '0'
     tokens:
     - apnsToken: $OCTOPOD_APNS
       date: 05/28/21 02:45:39
