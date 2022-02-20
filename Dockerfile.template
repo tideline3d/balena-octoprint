@@ -105,9 +105,9 @@ WORKDIR /octoprint
     # #"https://github.com/OllisGit/OctoPrint-FilamentManager/releases/download/1.8.1/master.zip" \
      "https://github.com/jneilliii/OctoPrint-CustomBackground/archive/refs/tags/1.0.0.zip" \
      "https://github.com/jneilliii/OctoPrint-PrusaSlicerThumbnails/archive/refs/tags/1.0.0.zip"\
-     "https://github.com/paukstelis/Octoprint-Cancelobject/archive/refs/tags/0.4.6.tar.gz"
-    # #"https://github.com/2blane/OctoPrint-Webhooks/archive/refs/tags/3.0.3.zip"
-    
+     "https://github.com/paukstelis/Octoprint-Cancelobject/archive/refs/tags/0.4.6.tar.gz" \
+    # #"https://github.com/2blane/OctoPrint-Webhooks/archive/refs/tags/3.0.3.zip" 
+     "https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere/archive/refs/tags/1.5.8.zip"
 # port to access haproxy frontend
 EXPOSE 80
 
