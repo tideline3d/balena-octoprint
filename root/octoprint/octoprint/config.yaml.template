@@ -55,16 +55,16 @@ plugins:
       - _important
       - _releases
   discovery:
-    upnpUuid: cb75080a-2627-4375-8d1d-e98f8b46b694
+    upnpUuid: cb75080a-2627-4375-8d1d-e98f8b46b6$OCTOPRINT_HOSTNAME
   errortracking:
-    unique_id: f6ff05df-c12e-46c4-a180-e82fc67e7489
+    unique_id: f6ff05df-c12e-46c4-a180-e82fc67e74$OCTOPRINT_HOSTNAME
   gcodeviewer:
     _config_version: 1
   softwareupdate:
     _config_version: 9
   tracking:
     enabled: true
-    unique_id: ea1e1779-820f-4dc9-a02d-37e982ba2228
+    unique_id: ea1e1779-820f-4dc9-a02d-37e982ba22$OCTOPRINT_HOSTNAME
   virtual_printer:
     _config_version: 1
     enabled: $VIRTUAL_PRINTER_ENABLED
