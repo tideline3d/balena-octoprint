@@ -95,7 +95,10 @@ plugins:
     uploaded_url: /plugin/custombackground/custom/uploaded.png?20210531030534
   homeassistant:
     _config_version: 2
+    device_manufacturer: Prusa
+    device_model: MK3S+
     node_id: 10473bd1ec0e4d97a99d26f688854f$OCTOPRINT_HOSTNAME
+    node_name: $OCTOPRINT_HOSTNAME
     unique_id: 10473bd1-ec0e-4d97-a99d-26f688854f$OCTOPRINT_HOSTNAME
   mqtt:
     broker:
