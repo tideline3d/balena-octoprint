@@ -93,6 +93,15 @@ plugins:
     _config_version: 1
     background_url: /plugin/custombackground/custom/uploaded.png?20210531030534
     uploaded_url: /plugin/custombackground/custom/uploaded.png?20210531030534
+  homeassistant:
+    _config_version: 2
+    node_id: 10473bd1ec0e4d97a99d26f688854f$OCTOPRINT_HOSTNAME
+    unique_id: 10473bd1-ec0e-4d97-a99d-26f688854f$OCTOPRINT_HOSTNAME
+  mqtt:
+    broker:
+      url: $MQTT_IP
+    publish:
+      baseTopic: octoPrint-$OCTOPRINT_HOSTNAME
 printerProfiles:
   default: _default
 serial:
