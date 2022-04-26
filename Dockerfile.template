@@ -93,10 +93,10 @@ WORKDIR /octoprint
 
  RUN PYTHONUSERBASE=/octoprint/plugins/ pip install --no-cache-dir \
      "https://github.com/tg44/OctoPrint-Prometheus-Exporter/archive/refs/tags/0.1.7.zip" \
-     "https://github.com/gdombiak/OctoPrint-OctoPod/archive/refs/tags/0.3.12.zip" \
+     "https://github.com/gdombiak/OctoPrint-OctoPod/archive/refs/tags/0.3.13.zip" \
      "https://github.com/tideline3d/OctoPrint-PrintJobHistory-ExternalDatabase/archive/refs/tags/1.2.1.zip" \
      "https://github.com/markwal/OctoPrint-SnapStream/archive/refs/tags/0.3.zip" \
-     "https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/refs/tags/1.13.0.zip" \
+     "https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/refs/tags/1.13.2.zip" \
      "https://github.com/Birkbjo/OctoPrint-Themeify/archive/refs/tags/v1.2.2.zip" \
      "https://github.com/eyal0/OctoPrint-PrintTimeGenius/archive/refs/tags/2.2.8.zip" \
     # #"https://github.com/jneilliii/OctoPrint-TPLinkSmartplug/archive/refs/tags/1.0.1.zip" \
@@ -107,7 +107,7 @@ WORKDIR /octoprint
      "https://github.com/jneilliii/OctoPrint-PrusaSlicerThumbnails/archive/refs/tags/1.0.0.zip"\
      "https://github.com/paukstelis/Octoprint-Cancelobject/archive/refs/tags/0.4.6.tar.gz" \
     # #"https://github.com/2blane/OctoPrint-Webhooks/archive/refs/tags/3.0.3.zip" 
-     "https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere/archive/refs/tags/1.5.8.zip"
+     "https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere/archive/refs/tags/1.6.6.zip"
 # port to access haproxy frontend
 EXPOSE 80
 
