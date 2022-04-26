@@ -101,7 +101,7 @@ plugins:
     broker:
       url: $MQTT_IP
     publish:
-      baseTopic: octoPrint-$OCTOPRINT_HOSTNAME
+      baseTopic: octoPrint-$OCTOPRINT_HOSTNAME/
 printerProfiles:
   default: _default
 serial:
