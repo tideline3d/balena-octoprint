@@ -17,7 +17,7 @@ scrape_configs:
      labels:
       job: octoprint  # A `job` label is fairly standard in prometheus and useful for linking metrics and logs.
       __path__: /octoprint-logs/*.log # The path matching uses a third party library: https://github.com/bmatcuk/doublestar
-      hostname: ${OCTOPRINT_HOSTNAME:defaulthostname}
+      host: ${OCTOPRINT_HOSTNAME:defaulthostname}
  - job_name: journal
    journal:
     max_age: 12h
