@@ -54,3 +54,10 @@ services:
     command: -config.file=/etc/promtail/promtail.yml -log.level=debug -config.expand-env=true
     labels:
       io.balena.features.journal-logs: '1'
+  telegraf:
+     build: ./telegraf
+     restart: always
+     labels:
+       io.balena.features.balena-api: '1' # necessary to discover services
+       io.balena.features.supervisor-api: 1  # necessary to discover services in local mode
+     privileged: true # necessary to change container hostname
