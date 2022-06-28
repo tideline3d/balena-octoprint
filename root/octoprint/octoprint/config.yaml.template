@@ -58,8 +58,8 @@ plugins:
     _config_version: 13
     bed_low: '0'
     debug_logging: $OCTOPOD_DEBUG_LOGGING
-    pause_interval: '10'
-    progress_type: '100'
+    pause_interval: '30'
+    progress_type: '0'
     bed_target_temp_hold: '0'
     tokens:
     - apnsToken: $OCTOPOD_APNS
