@@ -118,8 +118,8 @@ temperature:
     name: PETG
 webcam:
   ffmpeg: /usr/bin/ffmpeg
-  snapshot: http://$OCTOPRINT_HOSTNAME.local:8080/images/live.jpg
-  stream: http://$OCTOPRINT_HOSTNAME.local:8080/hls/live.stream.m3u8
+  snapshot: http://$OCTOPRINT_HOSTNAME.farm.tideline.io:8080/images/live.jpg
+  stream: http://$OCTOPRINT_HOSTNAME.farm.tideline.io:8080/hls/live.stream.m3u8
 events:
   enabled: True
   subscriptions:
