@@ -61,6 +61,7 @@ plugins:
     pause_interval: '30'
     progress_type: '0'
     bed_target_temp_hold: '0'
+    thermal_runway_threshold: '15'
     tokens:
     - apnsToken: $OCTOPOD_APNS
       date: 05/28/21 02:45:39
