@@ -17,6 +17,7 @@ ARG octoprint_ref
 ENV octoprint_ref "1.8.4"
 
 RUN apt-get update && apt-get install -y \
+  avahi-daemon \
   avrdude \
   build-essential \
   cmake \
