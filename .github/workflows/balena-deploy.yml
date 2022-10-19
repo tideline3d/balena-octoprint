@@ -1,10 +1,11 @@
 name: Deploy to Balena Cloud
 on:
-  push:
+ pull_request:
+    types: [opened, synchronize, closed]
     branches:
       - master
       - develop
-      
+
 jobs:
   balena_cloud_build:
     runs-on: ubuntu-latest
