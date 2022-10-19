@@ -3,15 +3,20 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch:
-
+      - develop
+      
 jobs:
-  balena-push:
+  balena_cloud_build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Push release to balenaCloud
-      uses: balena-io-playground/balena-cloud-github-action@v0.1
-      with:
-        balena_token: ${{ secrets.BALENA_TOKEN }}
-        balena_app_name: 'balena-octoprint'
+      - uses: actions/checkout@v3
+      - uses: balena-io/deploy-to-balena-action@master
+        id: build
+        with:
+          balena_token: ${{ secrets.BALENA_TOKEN }}
+          fleet: g_josh_wright/balena-octoprint
+          create_tag: true
+          layer_cache: true
+          default_branch: master
+      - name: Log release ID built
+        run: echo "Built release ID ${{ steps.build.outputs.release_id }}"
