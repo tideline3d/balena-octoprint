@@ -39,24 +39,6 @@ services:
   #   labels:
   #     io.balena.features.dbus: '1'
   #     io.balena.features.supervisor-api: '1'
-  balena-mdns-publisher:
-    image: 'balena/balena-mdns-publisher:master'
-    network_mode: host
-    cap_add:
-        - SYS_RESOURCE
-        - SYS_ADMIN
-    security_opt:
-        - 'apparmor:unconfined'
-    tmpfs:
-        - /run
-        - /sys/fs/cgroup
-    labels:
-        io.balena.features.dbus: '1'
-    environment:
-        CONFD_BACKEND: ENV
-        MDNS_TLD: dev1.local
-        # MDNS_SUBDOMAINS: >-
-        #     ["admin", "api", ...]
   restreamer:
     image: datarhei/restreamer-aarch64:latest
     restart: always
